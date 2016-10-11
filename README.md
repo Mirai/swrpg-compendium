@@ -1,1 +1,1 @@
-# swrpg-wiki
+# swrpg-compendium
