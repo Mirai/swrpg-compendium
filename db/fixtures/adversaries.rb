@@ -111,7 +111,7 @@ malefax = Adversary.seed(:name) do |a|
     {name: "Blaster Pistol", skill: "Ranged (Light)", damage: 6, range: "Medium", crit_rating: 3},
     {name: "Ancient Sith Sword", skill: "Melee", damage: 5, range: "Engaged", crit_rating: 2, weapon_qualities: "Pierce 2"},
     {name: "Dark Robes", soak: "+1"},
-    {name: "Stimpack", quantity: 2}
+    {name: "Stimpack", quantity: 2, description: "Use a maneuver to heal 4 wounds on an organic being."}
   ]
   a.talents = [{name: "Force Rating 2"}]
   a.abilities = [
