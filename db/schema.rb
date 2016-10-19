@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018193253) do
+ActiveRecord::Schema.define(version: 20161019160102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 20161018193253) do
     t.text     "equipment"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "careers", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "career_skills"
+    t.integer  "force_rating",  default: 0
+    t.integer  "source_id"
+    t.integer  "page_number"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["source_id"], name: "index_careers_on_source_id", using: :btree
   end
 
   create_table "moralities", force: :cascade do |t|
@@ -91,5 +103,6 @@ ActiveRecord::Schema.define(version: 20161018193253) do
     t.datetime "updated_at",          null: false
   end
 
+  add_foreign_key "careers", "sources"
   add_foreign_key "source_associations", "sources"
 end
