@@ -116,8 +116,8 @@ malefax = Adversary.seed(:name) do |a|
   a.talents = [{name: "Force Rating 2"}]
   a.abilities = [
     {name: "Dark Side Force User"},
-    {name: "Force Power: Sense", description: "Spend [force] to sense all living things within short range; Spend [force] to sense the emotional state of one living target engaged with Malefax; Spend [force] to boost the range at which he senses living things to long range."},
-    {name: "Force Power: Move", description: "Spend [force] to move one object of about the size of a backpack or smaller within short range; Spend [force] to increase the size of the object affected to person-sized; Spend [force] to increase the range to medium range."}
+    {name: "Force Power: Sense", description: "Spend [force_point] to sense all living things within short range; Spend [force_point] to sense the emotional state of one living target engaged with Malefax; Spend [force_point] to boost the range at which he senses living things to long range."},
+    {name: "Force Power: Move", description: "Spend [force_point] to move one object of about the size of a backpack or smaller within short range; Spend [force_point] to increase the size of the object affected to person-sized; Spend [force_point] to increase the range to medium range."}
   ]
 end
 
