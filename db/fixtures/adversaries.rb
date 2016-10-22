@@ -1,3 +1,6 @@
+swf01 = Source.find_by(product_code: "SWF01")
+swf02 = Source.find_by(product_code: "SWF02")
+
 advozse = Adversary.seed(:name) do |a|
   a.name = "Advozse Mercenaries"
   a.adversary_type = Adversary.adversary_types[:rival]
@@ -28,7 +31,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = advozse.first.id
   sa.sourceable_type = 'Adversary'
-  sa.source_id = Source.find_by(product_code: "SWF01").id
+  sa.source_id = swf01.id
   sa.page_number = 21
 end
 
@@ -50,7 +53,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = gatekeeper.first.id
   sa.sourceable_type = 'Adversary'
-  sa.source_id = Source.find_by(product_code: "SWF01").id
+  sa.source_id = swf01.id
   sa.page_number = 13
 end
 
@@ -76,7 +79,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = hunters.first.id
   sa.sourceable_type = 'Adversary'
-  sa.source_id = Source.find_by(product_code: "SWF01").id
+  sa.source_id = swf01.id
   sa.page_number = 14
 end
 
@@ -124,7 +127,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = malefax.first.id
   sa.sourceable_type = 'Adversary'
-  sa.source_id = Source.find_by(product_code: "SWF01").id
+  sa.source_id = swf01.id
   sa.page_number = 26
 end
 
@@ -147,6 +150,6 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = spintiri_icewolves.first.id
   sa.sourceable_type = 'Adversary'
-  sa.source_id = Source.find_by(product_code: "SWF01").id
+  sa.source_id = swf01.id
   sa.page_number = 23
 end

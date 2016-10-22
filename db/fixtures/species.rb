@@ -1,3 +1,5 @@
+swf02 = Source.find_by(product_code: "SWF02")
+
 cerean = Species.seed(:name) do |s|
   s.name = "Cerean"
   s.brawn = 2
@@ -16,7 +18,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = cerean.first.id
   sa.sourceable_type = 'Species'
-  sa.source_id = Source.find_by(product_code: "SWF02").id
+  sa.source_id = swf02.id
   sa.page_number = 54
 end
 
@@ -37,7 +39,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = human.first.id
   sa.sourceable_type = 'Species'
-  sa.source_id = Source.find_by(product_code: "SWF02").id
+  sa.source_id = swf02.id
   sa.page_number = 55
 end
 
@@ -62,7 +64,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = kel_dor.first.id
   sa.sourceable_type = 'Species'
-  sa.source_id = Source.find_by(product_code: "SWF02").id
+  sa.source_id = swf02.id
   sa.page_number = 57
 end
 
@@ -83,7 +85,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = mirialan.first.id
   sa.sourceable_type = 'Species'
-  sa.source_id = Source.find_by(product_code: "SWF02").id
+  sa.source_id = swf02.id
   sa.page_number = 58
 end
 
@@ -105,7 +107,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = nautolan.first.id
   sa.sourceable_type = 'Species'
-  sa.source_id = Source.find_by(product_code: "SWF02").id
+  sa.source_id = swf02.id
   sa.page_number = 59
 end
 
@@ -127,7 +129,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = togruta.first.id
   sa.sourceable_type = 'Species'
-  sa.source_id = Source.find_by(product_code: "SWF02").id
+  sa.source_id = swf02.id
   sa.page_number = 60
 end
 
@@ -149,7 +151,7 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = twilek.first.id
   sa.sourceable_type = 'Species'
-  sa.source_id = Source.find_by(product_code: "SWF02").id
+  sa.source_id = swf02.id
   sa.page_number = 61
 end
 
@@ -171,6 +173,6 @@ end
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = zabrak.first.id
   sa.sourceable_type = 'Species'
-  sa.source_id = Source.find_by(product_code: "SWF02").id
+  sa.source_id = swf02.id
   sa.page_number = 62
 end

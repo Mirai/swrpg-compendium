@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019164219) do
+ActiveRecord::Schema.define(version: 20161022033504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,19 @@ ActiveRecord::Schema.define(version: 20161019164219) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "nodes", force: :cascade do |t|
+    t.integer  "tree_id"
+    t.integer  "ability_id"
+    t.integer  "x"
+    t.integer  "y"
+    t.integer  "size",       default: 1
+    t.integer  "cost"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["ability_id"], name: "index_nodes_on_ability_id", using: :btree
+    t.index ["tree_id"], name: "index_nodes_on_tree_id", using: :btree
+  end
+
   create_table "source_associations", force: :cascade do |t|
     t.integer  "source_id"
     t.string   "sourceable_type"
@@ -115,6 +128,20 @@ ActiveRecord::Schema.define(version: 20161019164219) do
     t.datetime "updated_at",          null: false
   end
 
+  create_table "trees", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "tree_type",     default: 0
+    t.integer  "career_id"
+    t.text     "description"
+    t.text     "career_skills"
+    t.integer  "force_rating",  default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["career_id"], name: "index_trees_on_career_id", using: :btree
+  end
+
   add_foreign_key "careers", "sources"
+  add_foreign_key "nodes", "abilities"
   add_foreign_key "source_associations", "sources"
+  add_foreign_key "trees", "careers"
 end
