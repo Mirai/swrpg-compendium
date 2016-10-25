@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022033504) do
+ActiveRecord::Schema.define(version: 20161024015854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,15 @@ ActiveRecord::Schema.define(version: 20161022033504) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "node_connections", force: :cascade do |t|
+    t.integer  "node_id"
+    t.integer  "connection_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["connection_id"], name: "index_node_connections_on_connection_id", using: :btree
+    t.index ["node_id"], name: "index_node_connections_on_node_id", using: :btree
   end
 
   create_table "nodes", force: :cascade do |t|
@@ -141,6 +150,7 @@ ActiveRecord::Schema.define(version: 20161022033504) do
   end
 
   add_foreign_key "careers", "sources"
+  add_foreign_key "node_connections", "nodes"
   add_foreign_key "nodes", "abilities"
   add_foreign_key "source_associations", "sources"
   add_foreign_key "trees", "careers"
