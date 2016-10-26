@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 20161024015854) do
   end
 
   create_table "moralities", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "source_id"
+    t.integer  "page_number"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["source_id"], name: "index_moralities_on_source_id", using: :btree
+  end
+
+  create_table "morality_rolls", force: :cascade do |t|
+    t.integer  "morality_id"
     t.integer  "min_value"
     t.integer  "max_value"
     t.integer  "emotion"
@@ -70,6 +80,7 @@ ActiveRecord::Schema.define(version: 20161024015854) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["morality_id"], name: "index_morality_rolls_on_morality_id", using: :btree
   end
 
   create_table "node_connections", force: :cascade do |t|
@@ -150,6 +161,8 @@ ActiveRecord::Schema.define(version: 20161024015854) do
   end
 
   add_foreign_key "careers", "sources"
+  add_foreign_key "moralities", "sources"
+  add_foreign_key "morality_rolls", "moralities"
   add_foreign_key "node_connections", "nodes"
   add_foreign_key "nodes", "abilities"
   add_foreign_key "source_associations", "sources"

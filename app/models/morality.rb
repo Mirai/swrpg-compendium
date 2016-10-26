@@ -1,3 +1,4 @@
 class Morality < ActiveRecord::Base
-  enum emotion: [:strength, :weakness, :other]
+  belongs_to :source
+  has_many :morality_rolls
 end

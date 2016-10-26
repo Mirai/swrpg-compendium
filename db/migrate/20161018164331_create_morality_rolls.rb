@@ -1,6 +1,7 @@
-class CreateMoralities < ActiveRecord::Migration[5.0]
+class CreateMoralityRolls < ActiveRecord::Migration[5.0]
   def change
-    create_table :moralities do |t|
+    create_table :morality_rolls do |t|
+      t.references :morality, index: true, foreign_key: true
       t.integer :min_value
       t.integer :max_value
       t.integer :emotion
