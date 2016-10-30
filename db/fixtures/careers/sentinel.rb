@@ -85,8 +85,8 @@ NodeConnection.seed(:node_id, :connection_id, { node_id: four_five.first.id, con
 SourceAssociation.seed(:sourceable_id, :sourceable_type, :source_id) do |sa|
   sa.sourceable_id = spec.first.id
   sa.sourceable_type = 'Tree'
-  sa.source_id = career.first
-  sa.page_number = 69
+  sa.source_id = swf02.id
+  sa.page_number = 93
 end
 
 spec = Tree.seed(:name) do |t|
